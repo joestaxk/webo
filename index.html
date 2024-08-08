@@ -105,6 +105,9 @@
     />
     <noscript data-n-css=""></noscript>
     <style data-n-href="/_next/static/css/6a0255020ad1d17c.css">
+      .keen-slider::-webkit-scrollbar, .keen-slider__slide::-webkit-scrollbar {
+        display: none;
+      }
       .keen-slider {
         display: flex;
         -webkit-user-select: none;
@@ -117,8 +120,9 @@
       }
       .keen-slider,
       .keen-slider__slide {
-        overflow: hidden;
+        overflow-x: scroll;
         position: relative;
+        scrollbar-width: none;
       }
       .keen-slider__slide {
         width: 100%;
@@ -283,6 +287,10 @@
         stroke: currentColor;
         stroke-width: 0;
       }
+
+      .border-gray-10\/10 {
+        border-color: #cccccc31;
+      }
     </style>
     <link
       as="script"
@@ -378,28 +386,6 @@
                     role="menuitem"
                     href="#webo.vercel.app/swap"
                     >Swap</a
-                  ><a
-                    class="header-nav-link"
-                    role="menuitem"
-                    href="#webo.vercel.app/new-offer"
-                    >Create Offer</a
-                  ><a
-                    class="header-nav-link"
-                    role="menuitem"
-                    href="#webo.vercel.app/dashboard"
-                    >Dashboard</a
-                  ><a
-                    class="header-nav-link"
-                    role="menuitem"
-                    href="#webo.vercel.app/wallet"
-                    >Wallet</a
-                  ><a
-                    href="https://spendcrypto.io/?utm_source=webo&amp;utm_content=navbar"
-                    target="_blank"
-                    class="nav-giftcard header-nav-link font-700"
-                    role="menuitem"
-                    rel="noreferrer"
-                    ><span class="nav-border">Spend</span></a
                   >
                 </div>
               </div>
@@ -409,20 +395,19 @@
                 <div class="flex flex-row items-center">
                   <div class="lg:hidden"></div>
                   <div class="lg:hidden"></div>
-                  <button class="btn btn-transparent border-0 px-0 lg:hidden">
+                  <button onclick="navBar()"  class="btn btn-transparent border-0 px-0 lg:hidden">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <path d="M0 9L24 9" stroke="#edf2f7"></path>
                       <path d="M0 17L15 17" stroke="#edf2f7"></path>
                     </svg>
                   </button>
                 </div>
+
+                <!-- mobile nav -->
                 <div
-                  class="z-50 origin-top-right fixed top-12 left-0 right-0 w-11/12 mx-auto mt-2 rounded-md shadow-lg lg:hidden"
-                  style="
-                    visibility: hidden;
-                    opacity: 0;
-                    transform: translateY(-20px) translateZ(0px);
-                  "
+                id="navbar_mobile"
+                hidden
+                  class="z-50 origin-top-right fixed top-12 left-0 right-0 w-11/12 mx-auto mt-2 rounded-md shadow-lg "
                 
                 >
                   <div
@@ -445,29 +430,13 @@
                         >Login</a
                       >
                     </div>
-                    <div class="relative">
-                      <div>
-                        <button
-                          class="inline-flex justify-center w-full px-4 py-4 leading-5 text-white transition ease-in-out duration-150 focus:outline-none"
-                          type="button"
-                          aria-haspopup="true"
-                          aria-expanded="true"
-                        >
-                          English<i class="lcs-icon icon-angle-down mr-0"></i>
-                        </button>
-                      </div>
-                    </div>
+                  
                     <div
                       class="border-t border-ocean-800"
                     
                     ></div>
                     <div class="py-1">
-                      <a
-                        class="nav-referral block text-gradient-cyan px-4 py-4 leading-5 font-700"
-                        role="menuitem"
-                        href="#webo.vercel.app/leaderboard"
-                        ><span class="nav-border pb-1">Ranks</span></a
-                      ><a
+                   <a
                         class="block px-4 py-4 leading-5 text-white focus:outline-none"
                         role="menuitem"
                         href="#webo.vercel.app/buy/crypto/united-states"
@@ -477,26 +446,6 @@
                         role="menuitem"
                         href="#webo.vercel.app/sell/crypto/united-states"
                         >Sell Crypto</a
-                      ><a
-                        class="block px-4 py-4 leading-5 text-white focus:outline-none"
-                        role="menuitem"
-                        href="#webo.vercel.app/swap"
-                        >Swap</a
-                      ><a
-                        class="block px-4 py-4 leading-5 text-white focus:outline-none"
-                        role="menuitem"
-                        href="#webo.vercel.app/new-offer"
-                        >Create Offer</a
-                      ><a
-                        class="block px-4 py-4 leading-5 text-white focus:outline-none"
-                        role="menuitem"
-                        href="#webo.vercel.app/dashboard"
-                        >Dashboard</a
-                      ><a
-                        class="block px-4 py-4 leading-5 text-white focus:outline-none"
-                        role="menuitem"
-                        href="#webo.vercel.app/wallet"
-                        >Wallet</a
                       >
                     </div>
                   </div>
@@ -2290,109 +2239,7 @@
             </div>
           </div>
         </section>
-        <section class="relative px-4 lg:px-0 bg-ocean-700 pt-16 lg:pt-24 pb-4">
-          <div
-            class="grid md:grid-cols-2 gap-8 md:gap-16 items-center container mx-auto px-4 lg:px-0 py-24"
-          
-          >
-            <div class="flex flex-col gap-4 md:gap-8">
-              <h2
-                class="text-2xl md:text-4xl font-700 text-white leading-tight mt-4"
-              >
-                Expand Your Trading Knowledge
-              </h2>
-              <p class="text-sm md:text-lg text-white font-700">
-                Make money trading cryptocurrency with P2P exchange.
-              </p>
-              <p class="text-sm md:text-lg text-white">
-                Increasing your cryptocurrency trading knowledge is easy when
-                you have the best free cryptocurrency guides and trading
-                tutorials.
-              </p>
-              <p class="text-sm md:text-lg text-white">
-                Learn how to buy and sell bitcoin for a profit, and earn money
-                with advanced trading techniques like crypto arbitrage.
-              </p>
-              <div>
-                <a
-                  class="inline-block align-middle btn-orange-gradient text-white text-xl font-700 py-2 px-12 border border-autumn rounded-full mt-8"
-                  href="#webo.vercel.app/learn"
-                  >Start learning</a
-                >
-              </div>
-            </div>
-            <div class="order-first md:order-last">
-              <span
-                style="
-                  box-sizing: border-box;
-                  display: inline-block;
-                  overflow: hidden;
-                  width: initial;
-                  height: initial;
-                  background: none;
-                  opacity: 1;
-                  border: 0px none;
-                  margin: 0px;
-                  padding: 0px;
-                  position: relative;
-                  max-width: 100%;
-                "
-                ><span
-                  style="
-                    box-sizing: border-box;
-                    display: block;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0px none;
-                    margin: 0px;
-                    padding: 0px;
-                    max-width: 100%;
-                  "
-                  ><img
-                    style="
-                      display: block;
-                      max-width: 100%;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px none;
-                      margin: 0px;
-                      padding: 0px;
-                    "
-                    alt=""
-                    aria-hidden="true"
-                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271030%27%20height=%27830%27/%3e" /></span
-                ><img
-                  alt="learn"
-                  srcset="
-                    ./assets/learn.svg 1x,
-                    ./assets/learn.svg 2x
-                  "
-                  src="./assets/learn.svg"
-                  decoding="async"
-                  data-nimg="intrinsic"
-                  style="
-                    position: absolute;
-                    inset: 0px;
-                    box-sizing: border-box;
-                    padding: 0px;
-                    border: medium none;
-                    margin: auto;
-                    display: block;
-                    width: 0px;
-                    height: 0px;
-                    min-width: 100%;
-                    max-width: 100%;
-                    min-height: 100%;
-                    max-height: 100%;
-                  "
-              /></span>
-            </div>
-          </div>
-        </section>
+
         <section class="relative px-4 lg:px-0 bg-ocean-900 py-12 lg:py-16">
           <div
             class="flex flex-col justify-between container mx-auto px-4 lg:px-0 py-24"
@@ -2792,7 +2639,7 @@
                 </div>
               </div>
             </div>
-            <div
+            <!-- <div
               class="cursor-pointer absolute left-0 top-1/2"
             
             >
@@ -2864,8 +2711,8 @@
                     max-height: 100%;
                   "
               /></span>
-            </div>
-            <div
+            </div> -->
+            <!-- <div
               class="cursor-pointer absolute right-0 top-1/2"
             
             >
@@ -2937,116 +2784,329 @@
                     max-height: 100%;
                   "
               /></span>
-            </div>
+            </div> -->
           </div>
         </section>
-        <section class="bg-ocean-900">
+        <section class="bg-ocean-900 flex flex-col justify-between container mx-auto px-4 lg:px-0 py-24">
+
           <div
-            class="flex flex-col justify-between container mx-auto px-4 lg:px-0 py-24"
-          
-          >
-            <div
-              class="flex flex-col items-start justify-center"
-            
-            >
+          class="w-full lg:mx-auto lg:max-w-[1168px] px-4 flex flex-col lg:flex-row gap-14"
+        >
+            <div class="w-full">
               <h2
-                class="text-3xl md:text-5xl font-700 text-white leading-tight mt-4"
-              >
-                Frequently Asked Questions
-              </h2>
-            </div>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
-            
+              class="text-3xl md:text-5xl font-700 text-white leading-tight mt-4"
             >
-              <div
-                class="flex flex-col bg-ocean-800 rounded-xl p-8 md:p-12"
-              
-              >
+              Faq Sell  
+            </h2>
+              <div class="w-full flex flex-col gap-0.5"> 
+
                 <div
-                  class="text-lg md:text-xl font-600 text-white"
-                
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
                 >
-                  What is webo?
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between  py-2 text-content-primary"
+                  >
+                    How to sell cryptocurrency?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      Bankout Sell enables you to sell cryptocurrency online
+                      with several clicks. Just visit Bankout.com/sell, choose
+                      the cryptocurrency you'd like to sell, submit the
+                      transaction, and follow further instructions. Sell
+                      cryptocurrency in a fast and secure manner.
+                    </p>
+                  </div>
                 </div>
-                <p class="mt-3 text-white text-base">
-                  webo is the most popular non-custodial cryptocurrency
-                  marketplace that enables you to buy bitcoin and trade the most
-                  popular types of cryptocurrency with other traders from around
-                  the world. Buy bitcoin instantly with bank transfer, cash, and
-                  hundreds of different payment methods. Trading P2P on
-                  webo is the easiest way to buy bitcoin and expand
-                  your cryptocurrency portfolio.
-                </p>
-              </div>
-              <div
-                class="flex flex-col bg-ocean-800 rounded-xl p-8 md:p-12"
-              
-              >
                 <div
-                  class="text-lg md:text-xl font-600 text-white"
-                
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
                 >
-                  What Do I Need to Get Started?
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between py-2 text-content-primary"
+                  >
+                    Who are your partners?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      Transak is a global payment solution that allows our
+                      customers to buy and sell cryptocurrency using bank
+                      transfers.
+                    </p>
+                  </div>
                 </div>
-                <p class="mt-3 text-white text-base">
-                  Start trading cryptocurrency with as little as a valid email
-                  address. You can exchange digital assets with escrow
-                  protection and high liquidity without the need for centralized
-                  exchanges or even a bank account. You can purchase bitcoin for
-                  the first time, sell cryptocurrency for cash, or buy crypto
-                  locally with the flexibility of P2P trading. You don't have to
-                  be experienced in crypto trading to start buying bitcoin and
-                  using your secure digital wallet.
-                </p>
-              </div>
-              <div
-                class="flex flex-col bg-ocean-800 rounded-xl p-8 md:p-12"
-              
-              >
                 <div
-                  class="text-lg md:text-xl font-600 text-white"
-                
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
                 >
-                  Is webo Secure?
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between py-2 text-content-primary"
+                  >
+                    Which cryptocurrencies can I sell?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      You can sell Bitcoin (BTC), Ethereum (ETH), Bitcoin Cash
+                      (BCH), Basic Attention Token (BAT), Algorand (ALGO),
+                      Tether ERC-20 (USDT), Tron (TRX), OKB (OKB), Dai (DAI),
+                      TONCOIN, and Elrond (eGLD ERC-20) using the Transak
+                      provider.
+                    </p>
+                  </div>
                 </div>
-                <p class="mt-3 text-white text-base">
-                  Non-custodial trading options enable you to trade bitcoin,
-                  ethereum, and more while remaining in control of your
-                  cryptocurrency. When using our non-custodial wallets, you can
-                  export your private keys and even trade directly from MetaMask
-                  when exchanging ethereum or other supported tokens. So start
-                  trading digital currencies without having to hand over control
-                  of your funds. webo strives to maintain the highest
-                  level of security, including offering expected features like
-                  two-factor authentication alongside leveraging smart contracts
-                  and custom bitcoin scripts for our non-custodial trading.
-                </p>
-              </div>
-              <div
-                class="flex flex-col bg-ocean-800 rounded-xl p-8 md:p-12"
-              
-              >
                 <div
-                  class="text-lg md:text-xl font-600 text-white"
-                
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
                 >
-                  Can I Trade Bitcoin for Cash?
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between py-2 text-content-primary"
+                  >
+                    What is the minimum amount I can sell?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      The minimum transaction amount is variable and depends on
+                      the chosen cryptocurrency. For example, the minimum amount
+                      of Bitcoin you can sell is 0.0003 BTC. See the complete
+                      list on Transak’s official website.
+                    </p>
+                  </div>
                 </div>
-                <p class="mt-3 text-white text-base">
-                  Not everyone has access to banking which is often a
-                  requirement of other forms of bitcoin exchange. When trading
-                  P2P, you can convert bitcoin to cash and trade bitcoin using
-                  your local currency by completing trades with local bitcoin
-                  traders in your area. Whatever your circumstances are, you can
-                  enjoy the ability to buy and sell bitcoin using any payment
-                  method you choose, including cash, and fund your free wallet
-                  with the most prominent digital currency.
-                </p>
+                <div
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
+                >
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between py-2 text-content-primary"
+                  >
+                    What is the maximum amount I can sell?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      If you want to sell large amounts of cryptocurrency,
+                      please take into account that a maximum amount of crypto
+                      sold via Transak cannot exceed €1,700/$2,000 per day or
+                      €7,500/$8,400 per month. If you want to sell a larger
+                      amount of cryptocurrency, we recommend that you try the
+                      full-featured cryptocurrency exchange Bankout PRO.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
+                >
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between py-2 text-content-primary"
+                  >
+                    How long does it take to get paid after selling
+                    cryptocurrency with Transak?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      You will receive your funds once the transaction is
+                      processed on the blockchain. The time of transaction
+                      processing is different for various blockchains. Please
+                      take into consideration that sometimes, there can be
+                      network congestion that might significantly increase the
+                      time it takes to receive your funds.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-full border-b border-border-primary border-gray-10/10 pb-px"
+                >
+                  <button
+                    data-tnav="faq-section-question"
+                    aria-expanded="true"
+                    class="group w-full flex gap-4 items-center text-left text-p1 font-semi-bold justify-between py-2 text-content-primary"
+                  >
+                    How can I contact you?
+                    <div
+                      class="lg:group-hover:bg-control-overlayed-hover p-2 rounded-s ml-auto"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="text-content-secondary transform-gpu transition-transform rotate-180"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M18.207 15.207a1 1 0 0 1-1.414 0L12 10.414l-4.793 4.793a1 1 0 0 1-1.414-1.414l5.5-5.5a1 1 0 0 1 1.414 0l5.5 5.5a1 1 0 0 1 0 1.414"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    class="pb-4 overflow-hidden"
+                    hidden
+                    data-tnav="faq-section-answer"
+                  >
+                    <p class="text-p2 text-content-primary">
+                      You can contact us at any time via the Live chat below.
+                      Both the Support team and the Bankout digital currency
+                      exchange work 24/7 and will be glad to help. You can also
+                      send us an email at
+                      <a class="underline" href="mailto:support@Bankout.com"
+                        >support@Bankout.com</a
+                      >.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+        </div>
+     </section>
         <footer
           class="bg-ocean-800 dark:bg-ocean-900 pt-12 md:pt-20 px-4 border-t border-ocean-700"
         >
@@ -3302,76 +3362,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="pl-0 pt-10 lg:pt-0">
-                <div class="font-700 pb-2">Support</div>
-                <ul>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      href="#webo.vercel.app/fees"
-                      >Fees</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      href="https://support.webo.com/hc/en-us/categories/360000496474-FAQ-s"
-                      >FAQs</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="#webo.vercel.app/love"
-                      >Testimonials</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://support.webo.com/hc/en-us"
-                      >Support Portal</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      href="#webo.vercel.app/list-your-project-token"
-                      >List your Token</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      href="#webo.vercel.app/api-docs"
-                      >Exchange API</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="pl-0 pt-10 lg:pt-0">
-                <div class="font-700 pb-2">Legal</div>
-                <ul>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      href="#webo.vercel.app/privacy"
-                      >Privacy Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-sm hover:text-autumn pt-2"
-                      href="#webo.vercel.app/terms-of-service"
-                      >Terms of Service &amp; Use</a
-                    >
-                  </li>
-                </ul>
-              </div>
+          
             </div>
           </div>
           <div
@@ -3474,5 +3465,8 @@
     <script src="./assets/9340-6f29b4b8eb8bcd1a.js"></script>
     <script src="./assets/[[...slug]]-1beed6cbfea56c61.js"></script>
     <script src="./assets/litecoin-062bd13cefd4d013.js"></script> -->
+
+
+    <script src="./assets/webo.js"></script>
   </body>
 </html>
